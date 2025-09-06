@@ -1,17 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const submissionController = require('../controllers/submissionController');
+const SubmissionController = require('../controllers/submissionController');
 
-// Route to submit code
-router.post('/submit', submissionController.submitCode);
+// submit code (grader)
+router.post('/submit', SubmissionController.submitCode);
 
-// Route to get submission results
-router.get('/:submissionId/results', submissionController.getSubmissionResults);
+// get submission by id
+router.get('/:submissionId', SubmissionController.getSubmissionResults);
 
-// Route to get all submissions for a user
-router.get('/user/:userId', submissionController.getUserSubmissions);
+// list user's submissions
+router.get('/user/:userId', SubmissionController.getUserSubmissions);
 
-// Route to delete a submission
-router.delete('/:submissionId', submissionController.deleteSubmission);
+// list shared submissions (public)
+router.get('/shared', SubmissionController.getSharedSubmissions);
+
+// get source of a shared submission
+router.get('/source/:submissionId', SubmissionController.getSubmissionSource);
+
+// delete submission
+router.delete('/:submissionId', SubmissionController.deleteSubmission);
 
 module.exports = router;
