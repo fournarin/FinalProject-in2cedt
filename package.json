@@ -1,0 +1,24 @@
+{
+  "name": "cp-platform",
+  "version": "1.0.0",
+  "description": "A competitive programming platform for Computer Engineering & Digital Technology students.",
+  "main": "src/backend/server.js",
+  "scripts": {
+    "start": "node src/backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "bash scripts/deploy-ec2.sh",
+    "setup-db": "bash scripts/setup-db.sh"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "mongoose": "^5.10.9",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
